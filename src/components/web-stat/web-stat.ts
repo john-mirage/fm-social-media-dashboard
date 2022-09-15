@@ -1,4 +1,5 @@
 class WebStat extends HTMLLIElement {
+  [key: string]: any;
   #initialMount = true;
   #templateFragment: DocumentFragment;
   #stat?: AppData.Stat;
@@ -27,6 +28,15 @@ class WebStat extends HTMLLIElement {
       this.classList.add("web-stat");
       this.append(this.#templateFragment);
       this.#initialMount = false;
+    }
+    this.upgradeProperty("stat");
+  }
+
+  upgradeProperty(prop: string) {
+    if (this.hasOwnProperty(prop)) {
+      let value = this[prop];
+      delete this[prop];
+      this[prop] = value;
     }
   }
 }
