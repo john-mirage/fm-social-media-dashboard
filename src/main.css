@@ -5,6 +5,7 @@
 @import "components/web-bar/web-bar.css";
 @import "components/web-theme-switch/web-theme-switch.css";
 @import "components/web-dashboard/web-dashboard.css";
+@import "components/web-social-media/web-social-media.css";
 
 :root {
 	--color-lime-green: hsl(163, 72%, 41%);
