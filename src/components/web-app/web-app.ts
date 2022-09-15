@@ -14,6 +14,7 @@ class WebApp extends HTMLElement {
     super();
     this.userPreferedThemeMQL = window.matchMedia("(prefers-color-scheme: light)");
     this.handleUserPreferedTheme = this.handleUserPreferedTheme.bind(this);
+    this.handleTheme = this.handleTheme.bind(this);
   }
   
   get localStorageTheme(): string | null {
@@ -52,11 +53,18 @@ class WebApp extends HTMLElement {
   }
 
   connectedCallback() {
+    if (this.localStorageTheme !== null) {
+      this.theme = this.localStorageTheme;
+    } else {
+      this.theme = this.userPreferedThemeMQL.matches ? LIGHT_THEME : DARK_THEME;
+    }
     this.userPreferedThemeMQL.addEventListener("change", this.handleUserPreferedTheme);
+    this.addEventListener("update-theme", this.handleTheme);
   }
 
   disconnectedCallback() {
     this.userPreferedThemeMQL.removeEventListener("change", this.handleUserPreferedTheme);
+    this.removeEventListener("update-theme", this.handleTheme);
   }
 
   attributeChangedCallback(name: string, _oldValue: string | null, newValue: string | null) {
@@ -76,6 +84,11 @@ class WebApp extends HTMLElement {
 
   handleUserPreferedTheme(event: MediaQueryListEvent) {
     this.theme = event.matches ? LIGHT_THEME : DARK_THEME;
+  }
+
+  handleTheme(customEvent: Event) {
+    const { theme } = (<CustomEvent>customEvent).detail;
+    this.theme = theme;
   }
 }
 

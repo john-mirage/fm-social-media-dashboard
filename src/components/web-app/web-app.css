@@ -1,0 +1,38 @@
+.web-app {
+  width: 100%;
+  height: auto;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
+@media screen and (min-width: 375px) {
+  .web-app {
+      max-width: 375px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .web-app {
+      max-width: 576px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .web-app {
+      max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .web-app {
+      max-width: 992px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .web-app {
+      max-width: 1160px;
+  }
+}
