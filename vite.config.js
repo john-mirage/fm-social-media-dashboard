@@ -6,10 +6,10 @@ export default defineConfig({
   base: "/social-media-dashboard/",
   resolve: {
     alias: {
-      '@images': resolve(__dirname, 'src/images'),
-      '@scripts': resolve(__dirname, 'src/scripts'),
-      '@styles': resolve(__dirname, 'src/styles'),
+      '@components': resolve(__dirname, 'src/components'),
       '@data': resolve(__dirname, 'src/data'),
+      '@images': resolve(__dirname, 'src/images'),
+      '@styles': resolve(__dirname, 'src/styles'),
     },
   },
 })

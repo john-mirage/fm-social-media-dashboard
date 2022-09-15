@@ -15,10 +15,10 @@
     "noImplicitReturns": true,
     "baseUrl": ".",
     "paths": {
-      "@images/*": ["src/images/*"],
-      "@scripts/*": ["src/scripts/*"],
-      "@styles/*": ["src/styles/*"],
+      "@components/*": ["src/components/*"],
       "@data/*": ["src/data/*"],
+      "@images/*": ["src/images/*"],
+      "@styles/*": ["src/styles/*"],
     },
   },
   "include": ["src"]
