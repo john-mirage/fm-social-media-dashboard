@@ -7,7 +7,7 @@ class WebApp extends HTMLElement {
   userPreferedThemeMQL: MediaQueryList;
 
   static get observedAttributes() {
-    return ["theme"];
+    return ["data-theme"];
   }
 
   constructor() {
@@ -39,14 +39,14 @@ class WebApp extends HTMLElement {
     }
   }
 
-  get theme(): string | null {
-    return this.getAttribute("theme");
+  get theme(): string | undefined {
+    return this.dataset.theme;
   }
 
-  set theme(newTheme: string | null) {
-    if (newTheme !== null) {
+  set theme(newTheme: string | undefined) {
+    if (newTheme !== undefined) {
       if (newTheme === DARK_THEME || newTheme === LIGHT_THEME) {
-        this.setAttribute("theme", newTheme);
+        this.dataset.theme = newTheme;
       } else {
         throw new Error("The new theme is not valid");
       }
@@ -72,7 +72,7 @@ class WebApp extends HTMLElement {
 
   attributeChangedCallback(name: string, _oldValue: string | null, newValue: string | null) {
     switch (name) {
-      case "theme":
+      case "data-theme":
         this.localStorageTheme = newValue;
         if (newValue === "light") {
           document.documentElement.classList.add(LIGHT_THEME);
