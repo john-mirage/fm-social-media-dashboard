@@ -2,104 +2,100 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/src/images/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/src/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Primary Meta Tags -->
-    <title>Social media dashboard</title>
-    <meta name="title" content="Social media dashboard">
-    <meta name="description" content="Frontend Mentor challenge solution for: Social media dashboard">
+  <!-- Primary Meta Tags -->
+  <title>Social media dashboard</title>
+  <meta name="title" content="Social media dashboard">
+  <meta name="description" content="Frontend Mentor challenge solution for: Social media dashboard">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://john-mirage.github.io/social-media-dashboard/">
-    <meta property="og:title" content="Social media dashboard">
-    <meta property="og:description" content="Frontend Mentor challenge solution for: Social media dashboard">
-    <meta property="og:image" content="https://john-mirage.github.io/social-media-dashboard/preview.jpg">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://john-mirage.github.io/social-media-dashboard/">
+  <meta property="og:title" content="Social media dashboard">
+  <meta property="og:description" content="Frontend Mentor challenge solution for: Social media dashboard">
+  <meta property="og:image" content="https://john-mirage.github.io/social-media-dashboard/preview.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://john-mirage.github.io/social-media-dashboard/">
-    <meta property="twitter:title" content="Social media dashboard">
-    <meta property="twitter:description" content="Frontend Mentor challenge solution for: Social media dashboard">
-    <meta property="twitter:image" content="https://john-mirage.github.io/social-media-dashboard/preview.jpg">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://john-mirage.github.io/social-media-dashboard/">
+  <meta property="twitter:title" content="Social media dashboard">
+  <meta property="twitter:description" content="Frontend Mentor challenge solution for: Social media dashboard">
+  <meta property="twitter:image" content="https://john-mirage.github.io/social-media-dashboard/preview.jpg">
 </head>
 
-<body class="page preload">
+<body class="page page--preload">
+  <!-- web app -->
+  <main class="web-app" is="web-app">
+    <!-- web bar -->
+    <header class="web-bar" is="web-bar" data-id="web-bar">
+      <div class="web-bar__section web-bar__section--text">
+        <h1 class="web-bar__title">Social Media Dashboard</h1>
+        <p class="web-bar__total-followers">Total Followers: 23,004</p>
+      </div>
+      <div class="web-bar__section">
+        <!-- web theme switch -->
+        <label class="web-theme-switch" is="web-theme-switch">
+          <span class="web-theme-switch__title">Dark Mode</span>
+          <input class="web-theme-switch__input" type="checkbox" name="theme-switcher" data-id="web-theme-switch-input">
+          <span class="web-theme-switch__track">
+            <span class="web-theme-switch__gradient"></span>
+            <span class="web-theme-switch__handle"></span>
+          </span>
+        </label>
+      </div>
+    </header>
+    <!-- web dashboard -->
+    <div class="web-dashboard" is="web-dashboard">
+      <h2 class="web-dashboard__hidden-title">Social medias card list</h2>
+      <ul class="web-dashboard__grid web-dashboard__grid--top" data-id="web-dashboard-social-medias"></ul>
+      <h2 class="web-dashboard__title">Overview - Today</h2>
+      <ul class="web-dashboard__grid web-dashboard__grid--bottom" data-id="web-dashboard-stats"></ul>
+    </div>
+  </main>
 
-    <main class="page__container">
+  <!-- template | web social media -->
+  <template id="template-web-social-media">
+    <div class="web-social-media">
+      <div class="web-social-media__header">
+        <img class="web-social-media__logo" data-id="web-social-media-logo">
+        <p class="web-social-media__account" data-id="web-social-media-account"></p>
+      </div>
+      <div class="web-social-media__body">
+        <p class="web-social-media__primary-count" data-id="web-social-media-count"></p>
+        <p class="web-social-media__primary-type" data-id="web-social-media-type"></p>
+      </div>
+      <div class="web-social-media__footer">
+        <img class="web-social-media__carret-icon" data-id="web-social-media-carret">
+        <p class="web-social-media__update" data-id="web-social-media-update"></p>
+      </div>
+    </div>
+  </template>
 
-        <header class="header">
-            <div class="header__section header__section--text">
-                <h1 class="header__title">Social Media Dashboard</h1>
-                <p class="header__total-followers">Total Followers: 23,004</p>
-            </div>
-            <div class="header__section">
-                <div class="toggle-button">
-                    <label class="toggle-button__label" for="theme-switcher">Dark Mode</label>
-                    <input class="toggle-button__input" type="checkbox" name="theme-switcher" id="theme-switcher">
-                    <div class="toggle-button__track">
-                        <div class="toggle-button__gradient"></div>
-                        <div class="toggle-button__handle"></div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="dashboard">
-            <div class="dashboard__grid dashboard__grid--top" id="social-media-grid">
-
-                <template id="social-media-template">
-                    <div class="social-media">
-                        <div class="social-media__header">
-                            <img class="social-media__logo" src="" alt="">
-                            <p class="social-media__account"></p>
-                        </div>
-                        <div class="social-media__body">
-                            <p class="social-media__primary-count"></p>
-                            <p class="social-media__primary-type"></p>
-                        </div>
-                        <div class="social-media__footer">
-                            <img class="social-media__carret-icon" src="" alt="carret icon">
-                            <p class="social-media__update"></p>
-                        </div>
-                    </div>
-                </template>
-
-            </div>
-
-            <h2 class="dashboard__title">Overview - Today</h2>
-
-            <div class="dashboard__grid dashboard__grid--bottom" id="stat-grid">
-
-                <template id="stat-template">
-                    <div class="stat">
-                        <div class="stat__header">
-                            <h3 class="stat__name"></h3>
-                            <img class="stat__icon" src="" alt="">
-                        </div>
-                        <div class="stat__body">
-                            <p class="stat__value"></p>
-                            <div class="stat__update-container">
-                                <img class="stat__carret-icon" src="" alt="carret icon">
-                                <p class="stat__update"></p>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-
-            </div>
+  <!-- template | web stat -->
+  <template id="template-web-stat">
+    <div class="web-stat">
+      <div class="web-stat__header">
+        <h3 class="web-stat__name" data-id="web-stat-name"></h3>
+        <img class="web-stat__logo" data-id="web-stat-logo">
+      </div>
+      <div class="web-stat__body">
+        <p class="web-stat__value" data-id="web-stat-value"></p>
+        <div class="web-stat__update-container">
+          <img class="web-stat__carret-icon" data-id="web-stat-carret">
+          <p class="web-stat__update" data-id="web-stat-update"></p>
         </div>
+      </div>
+    </div>
+  </template>
 
-    </main>
-
-    <aside class="page__pattern"></aside>
-
-    <script type="module" src="/src/main.ts"></script>
+  <!-- module -->
+  <script type="module" src="/src/main.ts"></script>
 </body>
 
 </html>

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "facebook",
+    "account": "@nathanf",
+    "order": 1,
+    "primary": {
+      "value": "1987",
+      "type": "followers",
+      "update": 12
+    },
+    "secondary": [
+      {
+        "value": "87",
+        "type": "Page Views",
+        "update": 3
+      },
+      {
+        "value": "52",
+        "type": "Likes",
+        "update": -2
+      }
+    ]
+  },
+  {
+    "name": "twitter",
+    "account": "@nathanf",
+    "order": 3,
+    "primary": {
+      "value": "1044",
+      "type": "followers",
+      "update": 99
+    },
+    "secondary": [
+      {
+        "value": "117",
+        "type": "Retweets",
+        "update": 303
+      },
+      {
+        "value": "507",
+        "type": "Likes",
+        "update": 553
+      }
+    ]
+  },
+  {
+    "name": "instagram",
+    "account": "@realnathanf",
+    "order": 2,
+    "primary": {
+      "value": "11k",
+      "type": "followers",
+      "update": 1099
+    },
+    "secondary": [
+      {
+        "value": "5462",
+        "type": "Likes",
+        "update": 2257
+      },
+      {
+        "value": "52k",
+        "type": "Profile Views",
+        "update": 1375
+      }
+    ]
+  },
+  {
+    "name": "youtube",
+    "account": "Nathan F.",
+    "order": 4,
+    "primary": {
+      "value": "8239",
+      "type": "subscribers",
+      "update": -144
+    },
+    "secondary": [
+      {
+        "value": "107",
+        "type": "Likes",
+        "update": -19
+      },
+      {
+        "value": "1407",
+        "type": "Total Views",
+        "update": -12
+      }
+    ]
+  }
+]
