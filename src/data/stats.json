@@ -1,0 +1,50 @@
+[
+  {
+    "name": "facebook",
+    "value": "87",
+    "type": "Page Views",
+    "update": 3
+  },
+  {
+    "name": "facebook",
+    "value": "52",
+    "type": "Likes",
+    "update": -2
+  },
+  {
+    "name": "instagram",
+    "value": "5462",
+    "type": "Likes",
+    "update": 2257
+  },
+  {
+    "name": "instagram",
+    "value": "52k",
+    "type": "Profile Views",
+    "update": 1375
+  },
+  {
+    "name": "twitter",
+    "value": "117",
+    "type": "Retweets",
+    "update": 303
+  },
+  {
+    "name": "twitter",
+    "value": "507",
+    "type": "Likes",
+    "update": 553
+  },
+  {
+    "name": "youtube",
+    "value": "107",
+    "type": "Likes",
+    "update": -19
+  },
+  {
+    "name": "youtube",
+    "value": "1407",
+    "type": "Total Views",
+    "update": -12
+  }
+]

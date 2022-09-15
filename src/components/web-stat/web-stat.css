@@ -1,34 +1,34 @@
-.stat {
+.web-stat {
   width: 100%;
   height: 100%;
-  padding: 2.4rem;
+  padding: 1.5rem;
   background-color: var(--color-card);
-  border-radius: 0.4rem;
+  border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 150ms;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
-.stat:hover {
+.web-stat:hover {
   background-color: var(--color-card-hover);
 }
 
-.stat--first { order: 1; }
-.stat--second { order: 2 }
-.stat--third { order: 3 }
-.stat--fourth { order: 4 }
+.web-stat--1 { order: 1; }
+.web-stat--2 { order: 2 }
+.web-stat--3 { order: 3 }
+.web-stat--4 { order: 4 }
 
-.stat__header {
+.web-stat__header {
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: auto;
-  margin-bottom: 2.4rem;
 }
 
-.stat__body {
+.web-stat__body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,51 +37,49 @@
   height: auto;
 }
 
-.stat__name {
-  font-size: 1.4rem;
+.web-stat__name {
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--color-secondary-text);
   transition: color 150ms;
-  margin: 0;
 }
 
-.stat__icon {
-  width: 2rem;
+.web-stat__icon {
+  width: 1.25rem;
   height: auto;
 }
 
-.stat__value {
-  font-size: 3.2rem;
-  line-height: 3.2rem;
+.web-stat__value {
+  font-size: 2rem;
+  line-height: 2rem;
   font-weight: 700;
   color: var(--color-primary-text);
   transition: color 150ms;
   margin: 0;
 }
 
-.stat__update-container {
+.web-stat__update-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
 
-.stat__carret-icon {
-  width: 0.8rem;
+.web-stat__carret-icon {
+  width: 0.5rem;
   height: auto;
-  margin-right: 0.4rem;
+  margin-right: 0.25rem;
 }
 
-.stat__update {
-  font-size: 1.2rem;
+.web-stat__update {
+  font-size: 0.75rem;
   font-weight: 700;
-  margin: 0;
 }
 
-.stat__update--increase {
+.web-stat__update--increase {
   color: var(--color-lime-green);
 }
 
-.stat__update--decrease {
+.web-stat__update--decrease {
   color: var(--color-bright-red);
 }

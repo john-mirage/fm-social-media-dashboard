@@ -1,8 +1,8 @@
 .web-app {
   width: 100%;
   height: auto;
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media screen and (min-width: 375px) {
