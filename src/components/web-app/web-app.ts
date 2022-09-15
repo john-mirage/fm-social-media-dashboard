@@ -19,9 +19,12 @@ class WebApp extends HTMLElement {
   
   get localStorageTheme(): string | null {
     const localStorageTheme = localStorage.getItem(LOCAL_STORAGE_KEY);
-    return localStorageTheme !== null && (localStorageTheme === LIGHT_THEME || localStorageTheme === DARK_THEME)
-      ? localStorageTheme
-      : null;
+    if (localStorageTheme !== null) {
+      const theme = JSON.parse(localStorageTheme);
+      return theme === LIGHT_THEME || theme === DARK_THEME ? theme : null;
+    } else {
+      return null;
+    }
   }
 
   set localStorageTheme(newLocalStorageTheme: string | null) {

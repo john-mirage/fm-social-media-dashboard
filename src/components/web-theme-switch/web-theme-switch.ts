@@ -11,6 +11,7 @@ class WebThemeSwitch extends HTMLLabelElement {
   }
 
   connectedCallback() {
+    this.inputElement.checked = document.documentElement.classList.contains("light");
     this.inputElement.addEventListener("click", this.handleInputChange);
   }
 
