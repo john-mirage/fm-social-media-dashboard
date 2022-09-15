@@ -56,20 +56,9 @@
   height: auto;
 }
 
-.web-social-media__footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .web-social-media__logo {
   width: 1.25rem;
-  height: auto;
+  height: 1.25rem;
   margin-right: 0.5rem;
 }
 
@@ -81,7 +70,7 @@
   margin: 0;
 }
 
-.web-social-media__primary-count {
+.web-social-media__value {
   font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: -0.125rem;
@@ -89,7 +78,7 @@
   transition: color 150ms;
 }
 
-.web-social-media__primary-type {
+.web-social-media__type {
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.3125rem;
@@ -98,16 +87,15 @@
   transition: color 150ms;
 }
 
-.web-social-media__carret-icon {
-  width: 0.5rem;
-  height: auto;
-  margin-right: 0.25rem;
-}
-
 .web-social-media__update {
-  font-size: 0.75rem;
-  font-weight: 700;
-  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .web-social-media__update--increase {
@@ -116,4 +104,16 @@
 
 .web-social-media__update--decrease {
   color: var(--color-bright-red);
+}
+
+.web-social-media__update-icon {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.25rem;
+}
+
+.web-social-media__update-value {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 0;
 }

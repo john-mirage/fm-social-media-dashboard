@@ -9,8 +9,8 @@
 @import "components/web-stat/web-stat.css";
 
 :root {
-	--color-lime-green: hsl(163, 72%, 41%);
-	--color-bright-red: hsl(356, 69%, 56%);
+	--color-lime-green: hsl(163, 71%, 48%);
+	--color-bright-red:  hsl(353, 78%, 80%);
 	--color-facebook: hsl(208, 92%, 53%);
 	--color-twitter: hsl(203, 89%, 53%);
 	--color-instagram: linear-gradient(to right,hsl(37, 97%, 70%),hsl(329, 70%, 58%));
@@ -20,7 +20,7 @@
 	--color-toggle-handle: hsl(230, 17%, 14%);
 	--color-bg: hsl(230, 17%, 14%);
 	--color-bg-pattern: hsl(232, 19%, 15%);
-	--color-card: hsl(228, 28%, 20%);
+	--color-card: hsl(229, 27%, 20%);
 	--color-card-hover: hsl(228, 26%, 27%);
 	--color-primary-text: hsl(0, 0%, 100%);
 	--color-secondary-text: hsl(228, 34%, 66%);
@@ -28,12 +28,14 @@
 }
 
 :root.light {
+  --color-lime-green: hsl(165, 80%, 20%);
+  --color-bright-red: hsl(355, 71%, 36%);
 	--color-toggle: hsl(230, 22%, 74%);
 	--color-toggle-handle: hsl(0, 0%, 100%);
 	--color-toggle-hover: linear-gradient(to right,hsl(210, 78%, 56%),hsl(146, 68%, 55%));
 	--color-bg: hsl(0, 0%, 100%);
 	--color-bg-pattern: hsl(225, 100%, 98%);
-	--color-card: hsl(227, 47%, 96%);
+	--color-card: hsl(228, 50%, 96%);
 	--color-card-hover: hsl(232, 33%, 91%);
 	--color-primary-text: hsl(230, 17%, 14%);
 	--color-secondary-text: hsl(229, 12%, 44%);

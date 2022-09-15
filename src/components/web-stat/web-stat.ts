@@ -6,20 +6,22 @@ class WebStat extends HTMLLIElement {
   #templateFragment: DocumentFragment;
   #socialMediaStat?: AppData.StatWithIcons;
   nameElement: HTMLParagraphElement;
-  logoElement: HTMLImageElement;
+  logoElement: SVGUseElement;
   valueElement: HTMLParagraphElement;
-  carretElement: HTMLImageElement;
-  updateElement: HTMLParagraphElement;
+  updateElement: HTMLDivElement;
+  updateIconElement: SVGUseElement;
+  updateValueElement: HTMLParagraphElement;
 
   constructor() {
     super();
     const template = <HTMLTemplateElement>document.getElementById("template-web-stat");
     this.#templateFragment = <DocumentFragment>template.content.cloneNode(true);
     this.nameElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-stat-name"]');
-    this.logoElement = <HTMLImageElement>this.#templateFragment.querySelector('[data-id="web-stat-logo"]');
+    this.logoElement = <SVGUseElement>this.#templateFragment.querySelector('[data-id="web-stat-logo"]');
     this.valueElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-stat-value"]');
-    this.carretElement = <HTMLImageElement>this.#templateFragment.querySelector('[data-id="web-stat-carret"]');
-    this.updateElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-stat-update"]');
+    this.updateElement = <HTMLDivElement>this.#templateFragment.querySelector('[data-id="web-stat-update"]');
+    this.updateIconElement = <SVGUseElement>this.#templateFragment.querySelector('[data-id="web-stat-update-icon"]');
+    this.updateValueElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-stat-update-value"]');
   }
 
   get socialMediaStat(): AppData.StatWithIcons {
@@ -33,15 +35,11 @@ class WebStat extends HTMLLIElement {
   set socialMediaStat(newSocialMediaStat: AppData.StatWithIcons) {
     this.#socialMediaStat = newSocialMediaStat;
     this.nameElement.textContent = this.#socialMediaStat.type;
-    this.logoElement.setAttribute("src", this.#socialMediaStat.logo);
-    this.logoElement.setAttribute("alt", this.#socialMediaStat.name);
+    this.logoElement.setAttribute("href", `#logo-${this.#socialMediaStat.name}`);
     this.valueElement.textContent = this.#socialMediaStat.value;
-    this.carretElement.setAttribute("src", this.#socialMediaStat.carret);
-    this.updateElement.textContent = `${String(Math.abs(this.#socialMediaStat.update))}%`;
-    this.updateElement.classList.add(this.#socialMediaStat.update > 0
-      ? "web-stat__update--increase"
-      : "web-stat__update--decrease"
-    );
+    this.updateElement.classList.add(`web-stat__update--${this.#socialMediaStat.update > 0 ? "increase" : "decrease"}`);
+    this.updateIconElement.setAttribute("href", this.#socialMediaStat.carret);
+    this.updateValueElement.textContent = `${String(Math.abs(this.#socialMediaStat.update))}%`;
   }
 
   connectedCallback() {

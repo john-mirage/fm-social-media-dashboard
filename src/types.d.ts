@@ -7,7 +7,6 @@ declare namespace AppData {
   }
 
   interface StatWithIcons extends Stat {
-    logo: string;
     carret: string;
   }
   
@@ -20,7 +19,6 @@ declare namespace AppData {
   }
 
   interface SocialMediaWithIcons extends SocialMedia {
-    logo: string;
     carret: string;
   }
 }

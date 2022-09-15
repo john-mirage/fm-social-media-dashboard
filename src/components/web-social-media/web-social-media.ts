@@ -6,24 +6,26 @@ class WebSocialMedia extends HTMLLIElement {
   #templateFragment: DocumentFragment;
   #socialMedia?: AppData.SocialMediaWithIcons;
   headerElement: HTMLDivElement;
-  logoElement: HTMLImageElement;
+  logoElement: SVGUseElement;
   accountElement: HTMLParagraphElement;
   valueElement: HTMLParagraphElement;
   typeElement: HTMLParagraphElement;
-  carretElement: HTMLImageElement;
-  updateElement: HTMLParagraphElement;
+  updateElement: HTMLDivElement;
+  updateIconElement: SVGUseElement;
+  updateValueElement: HTMLParagraphElement;
 
   constructor() {
     super();
     const template = <HTMLTemplateElement>document.getElementById("template-web-social-media");
     this.#templateFragment = <DocumentFragment>template.content.cloneNode(true);
     this.headerElement = <HTMLDivElement>this.#templateFragment.querySelector('[data-id="web-social-media-header"]');
-    this.logoElement = <HTMLImageElement>this.#templateFragment.querySelector('[data-id="web-social-media-logo"]');
+    this.logoElement = <SVGUseElement>this.#templateFragment.querySelector('[data-id="web-social-media-logo"]');
     this.accountElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-account"]');
-    this.valueElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-count"]');
+    this.valueElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-value"]');
     this.typeElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-type"]');
-    this.carretElement = <HTMLImageElement>this.#templateFragment.querySelector('[data-id="web-social-media-carret"]');
-    this.updateElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-update"]');
+    this.updateElement = <HTMLDivElement>this.#templateFragment.querySelector('[data-id="web-social-media-update"]');
+    this.updateIconElement = <SVGUseElement>this.#templateFragment.querySelector('[data-id="web-social-media-update-icon"]');
+    this.updateValueElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-update-value"]');
   }
 
   get socialMedia(): AppData.SocialMediaWithIcons {
@@ -37,16 +39,12 @@ class WebSocialMedia extends HTMLLIElement {
   set socialMedia(newSocialMedia: AppData.SocialMediaWithIcons) {
     this.#socialMedia = newSocialMedia;
     this.headerElement.classList.add(`web-social-media__header--${this.#socialMedia.name}`);
-    this.logoElement.setAttribute("src", this.#socialMedia.logo);
-    this.logoElement.setAttribute("alt", this.#socialMedia.name);
+    this.logoElement.setAttribute("href", `#logo-${this.#socialMedia.name}`);
     this.accountElement.textContent = this.#socialMedia.account;
     this.typeElement.textContent = this.#socialMedia.type;
-    this.carretElement.setAttribute("src", this.#socialMedia.carret);
-    this.updateElement.classList.add(this.#socialMedia.update > 0
-      ? "web-social-media__update--increase"
-      : "web-social-media__update--decrease"
-    );
-    this.updateElement.textContent = `${String(Math.abs(this.#socialMedia.update))} Today`;
+    this.updateElement.classList.add(`web-social-media__update--${this.#socialMedia.update > 0 ? "increase" : "decrease"}`);
+    this.updateIconElement.setAttribute("href", this.#socialMedia.carret);
+    this.updateValueElement.textContent = `${String(Math.abs(this.#socialMedia.update))} Today`;
   }
 
   connectedCallback() {
