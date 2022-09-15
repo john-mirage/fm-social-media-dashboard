@@ -1,3 +1,5 @@
+import animateNumbers from "@utils/numbers";
+
 class WebStat extends HTMLLIElement {
   [key: string]: any;
   #initialMount = true;
@@ -36,7 +38,10 @@ class WebStat extends HTMLLIElement {
     this.valueElement.textContent = this.#socialMediaStat.value;
     this.carretElement.setAttribute("src", this.#socialMediaStat.carret);
     this.updateElement.textContent = `${String(Math.abs(this.#socialMediaStat.update))}%`;
-    this.updateElement.classList.add(this.#socialMediaStat.update > 0 ? "web-stat__update--increase" : "web-stat__update--decrease");
+    this.updateElement.classList.add(this.#socialMediaStat.update > 0
+      ? "web-stat__update--increase"
+      : "web-stat__update--decrease"
+    );
   }
 
   connectedCallback() {
@@ -46,6 +51,9 @@ class WebStat extends HTMLLIElement {
       this.#initialMount = false;
     }
     this.upgradeProperty("socialMediaStat");
+    const end = Number(this.socialMediaStat.value.replaceAll(/\D/g, ""));
+    const unit = this.socialMediaStat.value.replaceAll(/\d/g, "");
+    animateNumbers(this.valueElement, 0, end, 1000, unit);
   }
 
   upgradeProperty(prop: string) {

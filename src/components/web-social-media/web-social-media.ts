@@ -1,3 +1,5 @@
+import animateNumbers from "@utils/numbers";
+
 class WebSocialMedia extends HTMLLIElement {
   [key: string]: any;
   #initialMount = true;
@@ -6,7 +8,7 @@ class WebSocialMedia extends HTMLLIElement {
   headerElement: HTMLDivElement;
   logoElement: HTMLImageElement;
   accountElement: HTMLParagraphElement;
-  countElement: HTMLParagraphElement;
+  valueElement: HTMLParagraphElement;
   typeElement: HTMLParagraphElement;
   carretElement: HTMLImageElement;
   updateElement: HTMLParagraphElement;
@@ -18,7 +20,7 @@ class WebSocialMedia extends HTMLLIElement {
     this.headerElement = <HTMLDivElement>this.#templateFragment.querySelector('[data-id="web-social-media-header"]');
     this.logoElement = <HTMLImageElement>this.#templateFragment.querySelector('[data-id="web-social-media-logo"]');
     this.accountElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-account"]');
-    this.countElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-count"]');
+    this.valueElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-count"]');
     this.typeElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-type"]');
     this.carretElement = <HTMLImageElement>this.#templateFragment.querySelector('[data-id="web-social-media-carret"]');
     this.updateElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-update"]');
@@ -38,10 +40,12 @@ class WebSocialMedia extends HTMLLIElement {
     this.logoElement.setAttribute("src", this.#socialMedia.logo);
     this.logoElement.setAttribute("alt", this.#socialMedia.name);
     this.accountElement.textContent = this.#socialMedia.account;
-    this.countElement.textContent = this.#socialMedia.value;
     this.typeElement.textContent = this.#socialMedia.type;
     this.carretElement.setAttribute("src", this.#socialMedia.carret);
-    this.updateElement.classList.add(this.#socialMedia.update > 0 ? "web-social-media__update--increase" : "web-social-media__update--decrease");
+    this.updateElement.classList.add(this.#socialMedia.update > 0
+      ? "web-social-media__update--increase"
+      : "web-social-media__update--decrease"
+    );
     this.updateElement.textContent = `${String(Math.abs(this.#socialMedia.update))} Today`;
   }
 
@@ -52,6 +56,9 @@ class WebSocialMedia extends HTMLLIElement {
       this.#initialMount = false;
     }
     this.upgradeProperty("socialMedia");
+    const end = Number(this.socialMedia.value.replaceAll(/\D/g, ""));
+    const unit = this.socialMedia.value.replaceAll(/\d/g, "");
+    animateNumbers(this.valueElement, 0, end, 1000, unit);
   }
 
   upgradeProperty(prop: string) {
