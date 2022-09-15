@@ -1,4 +1,4 @@
-class WebThemeSwitch extends HTMLElement {
+class WebThemeSwitch extends HTMLLabelElement {
   constructor() {
     super();
   }

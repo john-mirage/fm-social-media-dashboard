@@ -1,9 +1,7 @@
-@import "components/page.css";
-@import "components/header.css";
-@import "components/toggle-button.css";
-@import "components/dashboard.css";
-@import "components/social-media.css";
-@import "components/stat.css";
+@import "styles/reset.css";
+@import "styles/page.css";
+
+@import "components/web-app/web-app.css";
 
 :root {
 	--color-lime-green: hsl(163, 72%, 41%);
@@ -37,36 +35,16 @@
 	--color-divider: hsl(230, 8%, 57%);
 }
 
-*,
-::before,
-::after {
-	box-sizing: border-box;
-}
-
-html {
-    font-size: 10px;
-}
-
 body {
-	margin: 0;
 	font-family:
-        "Inter",
-		system-ui,
-		-apple-system,
-		'Segoe UI',
-		Roboto,
-		Helvetica,
-		Arial,
-		sans-serif,
-		'Apple Color Emoji',
-		'Segoe UI Emoji';
-}
-
-body.preload,
-.preload * {
-	-webkit-transition: none !important;
-	-moz-transition: none !important;
-	-ms-transition: none !important;
-	-o-transition: none !important;
-	transition: none !important;
+    "Inter",
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
 }

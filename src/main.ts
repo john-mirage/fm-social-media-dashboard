@@ -1,4 +1,4 @@
-import "@styles/main.css";
+import "./main.css";
 
 import WebApp from "@components/web-app/web-app";
 import WebBar from "@components/web-bar/web-bar";
@@ -13,6 +13,10 @@ customElements.define("web-theme-switch", WebThemeSwitch, { extends: "label" });
 customElements.define("web-dashboard", WebDashboard, { extends: "div" });
 customElements.define("web-social-media", WebSocialMedia, { extends: "li" });
 customElements.define("web-stat", WebStat, { extends: "li" });
+
+window.addEventListener("load", () => {
+  document.body.classList.remove("page--preload");
+});
 
 /*
 import ThemeManager from "@scripts/theme-manager";
@@ -97,9 +101,5 @@ socialMedias.forEach((socialMedia: SocialMedia) => {
         statGrid.appendChild(statComment);
         statGrid.appendChild(statFragment);
     });
-});
-
-window.addEventListener("load", () => {
-    document.body.classList.remove("preload");
 });
 */

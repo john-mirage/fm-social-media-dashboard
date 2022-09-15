@@ -1,4 +1,4 @@
-class WebDashboard extends HTMLElement {
+class WebDashboard extends HTMLDivElement {
   constructor() {
     super();
   }
