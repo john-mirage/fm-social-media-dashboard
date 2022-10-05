@@ -5,7 +5,6 @@ class WebSocialMedia extends HTMLLIElement {
   #initialMount = true;
   #templateFragment: DocumentFragment;
   #socialMedia?: AppData.SocialMediaWithIcons;
-  headerElement: HTMLDivElement;
   logoElement: SVGUseElement;
   accountElement: HTMLParagraphElement;
   valueElement: HTMLParagraphElement;
@@ -18,7 +17,6 @@ class WebSocialMedia extends HTMLLIElement {
     super();
     const template = <HTMLTemplateElement>document.getElementById("template-web-social-media");
     this.#templateFragment = <DocumentFragment>template.content.cloneNode(true);
-    this.headerElement = <HTMLDivElement>this.#templateFragment.querySelector('[data-id="web-social-media-header"]');
     this.logoElement = <SVGUseElement>this.#templateFragment.querySelector('[data-id="web-social-media-logo"]');
     this.accountElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-account"]');
     this.valueElement = <HTMLParagraphElement>this.#templateFragment.querySelector('[data-id="web-social-media-value"]');
@@ -38,7 +36,7 @@ class WebSocialMedia extends HTMLLIElement {
 
   set socialMedia(newSocialMedia: AppData.SocialMediaWithIcons) {
     this.#socialMedia = newSocialMedia;
-    this.headerElement.classList.add(`web-social-media__header--${this.#socialMedia.name}`);
+    this.classList.add(`web-social-media--${this.#socialMedia.name}`);
     this.logoElement.setAttribute("href", `#logo-${this.#socialMedia.name}`);
     this.accountElement.textContent = this.#socialMedia.account;
     this.typeElement.textContent = this.#socialMedia.type;

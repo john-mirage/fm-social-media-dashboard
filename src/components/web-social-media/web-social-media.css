@@ -12,6 +12,8 @@
 .web-social-media {
   width: 100%;
   height: 100%;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
   overflow: hidden;
   border-radius: 0.25rem;
   background-color: var(--color-card);
@@ -19,32 +21,19 @@
   cursor: pointer;
 }
 
-.web-social-media:hover {
-  background-color: var(--color-card-hover);
-}
-
-.web-social-media__header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
-}
-
-.web-social-media__header--facebook {
+.web-social-media--facebook {
   border-top: 0.25rem solid var(--color-facebook);
 }
 
-.web-social-media__header--twitter {
+.web-social-media--twitter {
   border-top: 0.25rem solid var(--color-twitter);
 }
 
-.web-social-media__header--instagram {
+.web-social-media--instagram {
   position: relative;
 }
 
-.web-social-media__header--instagram::before {
+.web-social-media--instagram::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -54,11 +43,24 @@
   background: var(--color-instagram);
 }
 
-.web-social-media__header--youtube {
+.web-social-media--youtube {
   border-top: 0.25rem solid var(--color-youtube);
 }
 
+.web-social-media:hover {
+  background-color: var(--color-card-hover);
+}
+
+.web-social-media__header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .web-social-media__body {
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -105,8 +107,6 @@
   align-items: center;
   width: 100%;
   height: auto;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   animation-name: fadeInUp;
   animation-duration: 1000ms;
   animation-delay: 1000ms;
